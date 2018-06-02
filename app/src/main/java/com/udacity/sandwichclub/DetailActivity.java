@@ -66,6 +66,7 @@ public class DetailActivity extends AppCompatActivity {
                 .into(ingredientsIv);
 
 
+        // Toolbar
         toolbar.setTitle(sandwich.getMainName());
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
@@ -78,36 +79,38 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI(Sandwich sandwich) {
 
+
         ingredientsIv = findViewById(R.id.image_iv);
         textView_orgin = findViewById(R.id.origin_tv);
         textView_also_known_as = findViewById(R.id.also_known_tv);
         textView_ingredients = findViewById(R.id.ingredients_tv);
         textView_description = findViewById(R.id.description_tv);
 
-        textView_orgin.setText(sandwich.getPlaceOfOrigin());
-        textView_description.setText(sandwich.getDescription());
+
+        textView_orgin.setText(sandwich.getPlaceOfOrigin()); // setting the text at TextView Orgin
+        textView_description.setText(sandwich.getDescription());  // setting the text at TextView Description
 
 
         if(sandwich.getAlsoKnownAs().size() > 0) {
 
             for (int i = 0; i < sandwich.getAlsoKnownAs().size();i++){
-                textView_also_known_as.append(sandwich.getAlsoKnownAs().get(i) + "\n");
+                textView_also_known_as.append(sandwich.getAlsoKnownAs().get(i) + "\n"); // setting the text at TextView Also known as
             }
 
         }
         else {
-            textView_also_known_as.setText("...");
+            textView_also_known_as.setText("..."); // setting ... at TextView Also known as if no content is available
         }
 
         if (sandwich.getIngredients().size() > 0) {
 
             for (int i = 0; i < sandwich.getIngredients().size();i++){
-                textView_ingredients.append(sandwich.getIngredients().get(i)  + "\n");
+                textView_ingredients.append(sandwich.getIngredients().get(i)  + "\n"); // setting the text at TextView Ingredients
             }
 
         }
         else {
-            textView_ingredients.setText("...");
+            textView_ingredients.setText("..."); // setting ... at TextView Ingredients if no content is available
         }
     }
 

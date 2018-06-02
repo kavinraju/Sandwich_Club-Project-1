@@ -16,8 +16,8 @@ public class JsonUtils {
 
         Sandwich sandwich = new Sandwich();
 
-
         try {
+
             JSONObject jsonObject_main = new JSONObject(json);
 
             JSONObject jsonObject_name = jsonObject_main.getJSONObject("name");
