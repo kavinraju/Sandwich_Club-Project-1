@@ -127,5 +127,7 @@
             mashed potato patty\",\"chilli peppers\",\"garlic\",\"ginger\",\"bread bun\"]}
         </item>
     </string-array>
+    <string name="title_activity_detail">Details</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
